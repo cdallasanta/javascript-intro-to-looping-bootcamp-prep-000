@@ -1,12 +1,15 @@
 function forLoop(arr){
-  for(var i=0;1<10;i++){
+  for(var i=0;i<25;i++){
     if(i===1){
-      arr.push("I am 1 strange loop");
+      arr.push("I am 1 strange loop.");
     } else {
-      arr.push(`I am ${i} strange loops`);
+      arr.push(`I am ${i} strange loops.`);
     }
   }
+  
+  return arr;
 }
+
 
 function whileLoop(num){
   while(num>0){
@@ -16,11 +19,17 @@ function whileLoop(num){
 }
 
 
-function doWhileLoop(arr){
-  do {
-    delete arr[0];
-  } while (arr.length > 0)
+var n = 0;
+ 
+function incrementVariable() {
+  n = n + 1;
 }
 
-
+function doWhileLoop(arr){
+  do {
+    arr.splice(arr.length-1,1);
+  } while (arr.length > 0 && incrementVariable())
+  console.log(arr);
+  return arr;
+}
 
